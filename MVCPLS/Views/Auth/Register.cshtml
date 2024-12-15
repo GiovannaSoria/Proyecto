@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Registro";
+}
+
+<h2>Registro</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div style="color: red;">@ViewBag.ErrorMessage</div>
+}
+
+<form method="post" action="/Auth/Register">
+    <label for="username">Usuario:</label>
+    <input type="text" id="username" name="username" required />
+    <br />
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required />
+    <br />
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required />
+    <br />
+    <label for="role">Rol:</label>
+    <select id="role" name="role" required>
+        <option value="Cliente">Cliente</option>
+        <option value="Proveedor">Proveedor</option>
+        <option value="Admin">Admin</option>
+    </select>
+    <br />
+    <button type="submit">Registrar</button>
+</form>
+
+<p>¿Ya tienes cuenta? <a href="/Auth/Login">Inicia sesión aquí</a>.</p>

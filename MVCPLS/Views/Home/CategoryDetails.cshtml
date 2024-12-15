@@ -1,0 +1,87 @@
+﻿@model Entities.Categories
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalles de la Categoría</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-custom {
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+            .btn-custom:hover {
+                background-color: #218838;
+            }
+
+        .table {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header py-4">
+        <div class="container text-center">
+            <h1 class="fw-bold">Detalles de la Categoría</h1>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-sm">
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <td>@Model.CategoryID</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>@Model.CategoryName</td>
+                    </tr>
+                    <tr>
+                        <th>Descripción</th>
+                        <td>@Model.Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Botón Regresar con Icono -->
+        <div class="text-center mt-4">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-custom">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </a>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
